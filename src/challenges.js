@@ -106,12 +106,17 @@ const duplicateWords = [
 
 function uniquifyArray(duplicateWords) {
 
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    
+  if (duplicateWords.length === 0) {
+    return null;
   }
+  let nonRepeatArray = [];
 
-
+  duplicateWords.forEach( function (element) {
+    if (!nonRepeatArray.includes(element)) {
+      nonRepeatArray.push(element);
+    }
+  })
+  return nonRepeatArray;
 }
 
 // Bonus: Iteration 6 | Product of Adjacent Numbers
